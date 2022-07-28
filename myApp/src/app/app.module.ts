@@ -9,12 +9,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {GaugeModule} from "angular-gauge";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatIconModule} from "@angular/material/icon";
-import {MatFormField} from "@angular/material/form-field";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from "@angular/material/select";
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +26,10 @@ import {MatSelectModule} from "@angular/material/select";
     FormsModule,
     MatTabsModule,
     MatIconModule,
-    MatFormField,
+    MatFormFieldModule,
     MatSelectModule,
     HttpClientModule,
+    MatInputModule,
     GaugeModule.forRoot()
 
 
