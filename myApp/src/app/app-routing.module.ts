@@ -13,7 +13,7 @@ const routes: Routes = [
   //searched  with input variable :
   {
     path:'search-page/:game-search',
-    component:SearchBarComponent
+    component:HomeComponent
   }
 ];
 
