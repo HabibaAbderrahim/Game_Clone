@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(f:NgForm){
-    //search is the name of input html what's taped by the user
+    //search is the name of input html what's taped by the user see router
     this.router.navigate(['search-page' , f.value.search])
 
   }
