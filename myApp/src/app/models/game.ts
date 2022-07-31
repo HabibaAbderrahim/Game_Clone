@@ -1,8 +1,9 @@
 export interface IGame {
 
+  id:string ;
   background_image:string;
-  gameName: string;
-  releaseDate: string;
+  name: string;
+  released: string;
   metacritic_url:string;
   website:string;
   metacritic:string;
