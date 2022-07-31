@@ -9,7 +9,8 @@
 
       panelClass="sort-select"
       [(ngModel)]="sort"
-      >
+      (selectionChange)="fetchGames(sort)"
+      >    <!-- EventBINDING:every time we click new selction the sort : string took it-->
       <mat-option value="name">Name</mat-option>
       <mat-option value="released"> Released</mat-option>
       <mat-option value="added"> Added</mat-option>
@@ -25,26 +26,35 @@
 
 </div>
   <!--Game Cards-->
+<!--Game Array of games-->
   <div class="games">
+    <ng-container *ngFor="let i of game">
     <!--IMAGE-->
-    <div class="game">
-      <div class="game-thumb-container">
-      <img src="https://www.thaqfny.com/wp-content/uploads/2021/11/Grand-Theft-Auto-San-Andreas-7.jpg"
-      alt="thumbnail"
-      class="game-thumbnail" />
-    </div>
-    <!--DESCRIPTION-->
-    <div class="game-description">
-      <!--NAME GAME-->
-      <p class="game-name">Name</p>
-      <!--PLATFORM-->
-      <div class="game-platforms">
-        <img src="http://assets.stickpng.com/images/58482ffecef1014c0b5e4a8f.png"
-        alt="slug"
-        class="game-platform" />
-      </div>
+          <div class="game" (click)="openGameDetails(i.id)">
+            <div class="game-thumb-container">
+            <img
+              *ngIf="i.background_image"
 
+                src="{{i.background_image}}"
+                alt="thumbnail"
+                class="game-thumbnail" />
+
+              <p *ngIf="!i.background_image">ERROR 404</p>
+          </div>
+          <!--DESCRIPTION-->
+          <div class="game-description">
+            <!--NAME GAME-->
+            <p class="game-name">{{ i.name }}</p>
+            <!--PLATFORM-->
+            <div class="game-platforms">
+              <img src="https://media.gqmagazine.fr/photos/5ebacf2883f12a4c1cd796f2/master/pass/PlayStation.png"
+              alt="slug"
+              class="game-platform" />
+            </div>
+
+          </div>
     </div>
-    </div>
+    </ng-container>
   </div>
+
 
